@@ -1,0 +1,277 @@
+<!doctype html>
+    <html>
+        <head>
+            <title>MultiScreen</title>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=1024" />
+            <link rel="stylesheet" type="text/css" href="css/shCore.css" />
+            <link rel="stylesheet" type="text/css" href="css/shThemeDefault.css" />
+            <link rel="stylesheet" type="text/css" href="css/samsung.css" />
+            <link rel="stylesheet" type="text/css" href="css/presentation.css" />
+            <script src="js/shCore.js"></script>
+            <script src="js/shBrushJScript.js"></script>
+        </head>
+        <body class="impress-not-supported">
+            <div class="fallback-message">
+                <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+                <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+            </div>
+            <div id="impress">
+                <div id="title" class="step title" data-x="-1800" data-y="-1500">
+                    <h1>MultiScreen Technologies</h1>
+                    <h2 class="subtitle">Let your mobile talk to your TV!</h2>
+                </div>
+                <div id="usage" class="step slide" data-x="-600" data-y="-1500">
+                    <h2>Second Screen usage stats</h2>
+                    <figure>
+                        <img src="img/chart_s.jpg">
+                        <figcaption>*source: http://econintersect.com/b2evolution/blog1.php/2013/06/25/second-screen-tv-companion-or-distraction</figcaption>
+                    </figure>
+                </div>
+                <div id="list" class="step slide" data-x="600" data-y="-1500">
+                    <h2>Samsung MultiScreen Technologies</h2>
+                    <ul>
+                        <li> DIAL API</li>
+                        <li> NService</li>
+                        <li> MultiScreen API</li>
+                    </ul>
+                </div>
+                <div id="relations" class="step slide" data-x="1800" data-y="-1500">
+                    <h2>Samsung MultiScreen Technologies</h2>
+
+                    <svg width="800" height="500" style="overflow: hidden; margin-top: 50px;">
+                        <g stroke="#C6D9F1" fill="transparent" stroke-width="3">
+                            <ellipse cx="280" cy="125" rx="275" ry="120" id="DIAL_management"/>
+                            <ellipse cx="280" cy="375" rx="275" ry="120" id="nservice_messaging"/>
+                            <ellipse cx="500" cy="250" rx="295" ry="225" id="multiscreen_management_messaging"/>
+                        </g>
+
+                        <g stroke="transparent" stroke-width="0" fill="#558ED5">
+                            <rect x="40" y="75" width="140" height="70" rx="10" ry="10" id="DIAL_bg"/>
+                            <rect x="60" y="365" width="145" height="70" rx="10" ry="10" id="nservice_bg"/>
+                            <rect x="510" y="210" width="250" height="80" rx="10" ry="10" id="multiscreen_bg"/>
+                        </g>
+
+                        <g stroke="transparent" fill="#7F7F7F" stroke-width="0">
+                            <ellipse cx="400" cy="130" rx="120" ry="60" id="management_bg"/>
+                            <ellipse cx="400" cy="360" rx="120" ry="60" id="messaging_bg"/>
+                        </g>
+
+                        <g fill="white">
+                            <text x="50" y="120" id="DIAL_text">DIAL API</text>
+                            <text x="70" y="410" id="nservice_text">NService</text>
+                            <text x="520" y="260" id="multiscreen_text">MultiScreen API</text>
+                            <text x="307" y="140" id="management_text" class="smaller">App Management</text>
+                            <text x="307" y="370" id="messaging_text" class="smaller">App Messaging</text>
+                        </g>
+                    </svg>
+                </div>
+                <div class="step slide" data-x="1800" data-y="-1600" data-z="-400" data-rotate-x="90" data-scale="0.2">
+                    <h2>DIAL API</h2>
+                    <ul>
+                    	<li> Designed by Netflix</li>
+						<li> Available on Samsung SmartTVs since 2013 (premium feature)</li>
+						<li> Local area network device discovery (SSDP from UPnP stack)</li>
+						<li> Mobile client can launch TV app using simple HTTP request</li>
+						<li> Also available: app status, installation (if not installed), termination</li>
+                    </ul>
+                </div>
+                <div class="step slide" data-x="1910" data-y="-1500" data-z="-400" data-rotate-x="90" data-rotate-y="90" data-scale="0.2">
+                    <h2>NService</h2>
+                    <ul>
+                        <li> Samsung's own API, previously known as Convergence API</li>
+                        <li> Available on Samsung SmartTVs since 2012</li>
+                        <li> Local area network device discovery (SSDP from UPnP stack)</li>
+                        <li> ReST based API (HTTP requests, connection kept alive via longpolling)</li>
+                        <li> Up to 4 devices can be connected simultaneously</li>
+                    </ul>
+                </div>
+                <div class="step slide" data-x="1800" data-y="-1500" data-z="-300" data-scale="0.2">
+                    <h2>MultiScreen API</h2>
+                    <ul>
+                        <li> Samsung's own API</li>
+                        <li> Available since 2014 (currently SDK 5.0 only)</li>
+                        <li> Features: <ul>
+                            <li> WebSocket connectivity</li>
+                            <li> Cloud discovery mechanism</li>
+                            <li> Simple and intuitive JavaScript API, based on node.js's EventEmitter interface</li>
+                            <li> Native libraries for Android and iOS available</li>
+                            <li> DIAL API calls available directly from MultiScreen API level</li>
+                        </ul></li>
+                    </ul>
+                </div>
+                <div id="how-it-works" class="step slide" data-x="1800" data-y="-1300" data-z="-400" data-scale="0.1">
+                    <h2>How MultiScreen works</h2>
+                    <div id="howitworks">
+                        <div class="howitworks" id="discover">
+                            <figure>
+                                <img src="img/discover.png"/>
+                                <figcaption>Discover</figcaption>
+                            </figure>
+                            A mobile application calls the <strong>Device</strong> API to find a Smart TV it can connect to.
+                        </div>
+                        <div class="howitworks next" id="next1">
+                            <figure>
+                                <img src="img/next.png"/>
+                            </figure>
+                        </div>
+                        <div class="howitworks" id="launch">
+                            <figure style="position: relative; top: -8px;">
+                                <img src="img/launch.png"/>
+                                <figcaption>Launch</figcaption>
+                            </figure>
+                            Once a TV is discovered, user can launch the app in the TV directly from the mobile device.
+                        </div>
+                        <div class="howitworks next" id="next2">
+                            <figure>
+                                <img src="img/next.png"/>
+                            </figure>
+                        </div>
+                        <div class="howitworks" id="connect">
+                            <figure>
+                                <img src="img/connect.png"/>
+                                <figcaption>Connect</figcaption>
+                            </figure>
+                            Having the app running it the TV, mobile device tries to connect to a <strong>Channel</strong> opened by the TV application.
+                        </div>
+                        <div class="howitworks next" id="next3">
+                            <figure>
+                                <img src="img/next.png"/>
+                            </figure>
+                        </div>
+                        <div class="howitworks" id="communicate">
+                            <figure>
+                                <img src="img/communicate.png"/>
+                                <figcaption>Communicate</figcaption>
+                            </figure>
+                            After successful connecting, devices can communicate using the <strong>Channel</strong> API.
+                        </div>
+                    </div>
+                </div>
+                <div id="architecture" class="step slide" data-x="1800" data-y="-1200" data-z="-400" data-scale="0.1">
+                    <h2>MultiScreen overall architecture</h2>
+                    <figure>
+                        <img src="img/architecture.png"/>
+                    </figure>
+                </div>
+                <div class="step slide" data-x="1800" data-y="-1100" data-z="-400" data-scale="0.1">
+                    <h2>Code sample: mobile</h2>
+                    <pre class="brush: js">
+webapis.multiscreen.Device.search(function(devices) {
+  devices.forEach(function(device){
+    console.log(device);
+    device.getApplication("myApp", function(app){
+      if (app.lastKnownStatus === "running") {
+        device.connectToChannel("myChannel",
+                                {"name": "myClientName"},
+                                function(channel){
+                                  channel
+                                    .on("message", channelOnMessage);
+                                });
+      }
+    });
+  });
+});
+                    </pre>
+                </div>
+                <div class="step slide" data-x="1800" data-y="-1000" data-z="-400" data-scale="0.1">
+                    <h2>Code sample: TV</h2>
+                    <pre class="brush: js">
+webapis.multiscreen.Device.getCurrent(function(device){
+  device.openChannel("myChannel", {"name": "TVServer"}, function(channel) {
+    channel
+      .on("message", channelOnMessage)
+      .on("clientConnect", registerClient)
+      .on("clientDisconnect", deregisterClient);
+  }
+});
+                    </pre>
+                </div>
+                <div class="step slide" data-x="1690" data-y="-1500" data-z="-400" data-rotate-x="90" data-rotate-y="-90" data-scale="0.2">
+                    <h2>Resources</h2>
+                    <ul>
+                        <li> <a href="http://dial-multiscreen.org">DIAL API</a></li>
+                        <li> <a href="http://developer.samsung.com/samsung-web-api/technical-docs/N-Service">NService at Samsung Developers</a></li>
+                        <li> <a href="http://www.samsungdforum.com/Guide/ovw018/index.html">Convergence tutorials at SamsungDForum</a></li>
+                        <li> <a href="http://multiscreen.samsung.com">MultiScreen</a></li>
+                    </ul>
+                </div>
+                <div id="thank-you" class="step title" data-x="1000" data-y="0" data-rotate-y="180">
+                    <h1>Thank you</h1>
+                    <div id="credits">
+                        author: <a href="mailto:ppruszkowsk@gmail.com">Paweł Pruszkowski</a><br>
+                        presentation engine: impress.js<br>
+                        presentation theme: SRPOL
+                    </div>
+                </div>
+            </div>
+            <script src="js/impress.min.js"></script>
+            <script>
+                var animationTimeout = 2000,
+                    animationAutoRun = false,
+                    caption = document.querySelector("figcaption"),
+                    animationIDs = {
+                        "relations" :[
+                            ["management_bg", "management_text", "messaging_bg", "messaging_text"],
+                            ["DIAL_bg", "DIAL_text", "nservice_bg", "nservice_text", "multiscreen_bg", "multiscreen_text"],
+                            "DIAL_management",
+                            "nservice_messaging",
+                            "multiscreen_management_messaging"
+                        ],
+                        "how-it-works": [
+                            "discover",
+                            "next1",
+                            "launch",
+                            "next2",
+                            "connect",
+                            "next3",
+                            "communicate"
+                        ]
+                    };
+                impress().init();
+                function getHash(){ return location.hash.replace(/^#\/?/, ''); }
+                function animationStep() {
+                    var hash = getHash(), ids = animationIDs[hash].shift();
+                    if (ids && ids.charAt) {
+                        document.querySelector('#'+ids).style.opacity = '1';
+                    } else if (ids && ids.forEach) {
+                        ids.forEach(function(el) { document.querySelector('#'+el).style.opacity = '1'; });
+                    }
+                }
+                caption.innerHTML = caption.innerHTML.replace(/(http:[^\s]*)/, "$1".link("$1"));
+                document.addEventListener("keyup", function ( event ) {
+                    switch (event.keyCode) {
+                        case 65:
+                            animationStep();
+                            break;
+                    }
+                }, false);
+                function anim() {
+                    var hash = getHash(), retval;
+                    if (animationIDs[hash] && animationIDs[hash].length) {
+                        retval = !animationIDs[hash].length;
+                        animationStep();
+                        return retval;
+                    }
+                    return true;
+                }
+                window.addEventListener('hashchange', function(e){
+                    var hash = getHash();
+                    if (!animationAutoRun) {
+                        return;
+                    }
+                    if (animationIDs[hash] && animationIDs[hash].length) {
+                        (function runAnim(){
+                            animationStep();
+                            if (animationIDs[hash] && animationIDs[hash].length) {
+                                setTimeout(runAnim, animationTimeout);
+                            } else {
+                                console.log('Animation end', hash);
+                            }
+                        }())
+                    }
+                });
+                SyntaxHighlighter.all();
+            </script>
+        </body>
+    </html>
