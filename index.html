@@ -208,7 +208,6 @@ webapis.multiscreen.Device.getCurrent(function(device){
             <script src="js/impress.min.js"></script>
             <script>
                 var animationTimeout = 2000,
-                    animationAutoRun = false,
                     caption = document.querySelector("figcaption"),
                     animationIDs = {
                         "relations" :[
@@ -239,13 +238,6 @@ webapis.multiscreen.Device.getCurrent(function(device){
                     }
                 }
                 caption.innerHTML = caption.innerHTML.replace(/(http:[^\s]*)/, "$1".link("$1"));
-                document.addEventListener("keyup", function ( event ) {
-                    switch (event.keyCode) {
-                        case 65:
-                            animationStep();
-                            break;
-                    }
-                }, false);
                 function anim() {
                     var hash = getHash(), retval;
                     if (animationIDs[hash] && animationIDs[hash].length) {
@@ -255,22 +247,6 @@ webapis.multiscreen.Device.getCurrent(function(device){
                     }
                     return true;
                 }
-                window.addEventListener('hashchange', function(e){
-                    var hash = getHash();
-                    if (!animationAutoRun) {
-                        return;
-                    }
-                    if (animationIDs[hash] && animationIDs[hash].length) {
-                        (function runAnim(){
-                            animationStep();
-                            if (animationIDs[hash] && animationIDs[hash].length) {
-                                setTimeout(runAnim, animationTimeout);
-                            } else {
-                                console.log('Animation end', hash);
-                            }
-                        }())
-                    }
-                });
                 SyntaxHighlighter.all();
             </script>
         </body>
