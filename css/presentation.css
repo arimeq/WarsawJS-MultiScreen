@@ -198,3 +198,5 @@ a {
     background-repeat: no-repeat;
     background-position: right 0.4em;
 }
+#chromecast-icon {text-align: center; padding: 310px 0;}
+#chromecast-icon img {width:300px;}
